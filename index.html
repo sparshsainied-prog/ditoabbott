@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dito Abbott | The Terravenum Chronicles</title>
+<meta name="description" content="Debunked, Thugwallop and Breachfall: the Terravenum Chronicles, YA adventure with airships, slime beasts and sarcastic swords, by Dito Abbott.">
+<meta property="og:title" content="A homepage for Dito Abbott, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for Dito Abbott and the Terravenum Chronicles, made by Sparsh Saini. Not the official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/ditoabbott/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%238e1d16'/><circle cx='16' cy='17' r='10' fill='%23e9dcb6' stroke='%23c9a24a' stroke-width='3'/><path d='M10 15c3 2 5-2 8 0s3 3 5 1' fill='none' stroke='%233f8fc0' stroke-width='1.6'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours from the Debunked cover: red tooled leather, its darker edges, brass fittings,
+   the parchment of the map inside the porthole, and the map's blue seas. */
+:root {
+  --leather: #8e1d16;
+  --leather-2: #5a120d;
+  --umber: #2b0f0a;
+  --brass: #d1a94e;
+  --brass-2: #8a6a2a;
+  --parchment: #efe3c2;
+  --ink: #2a1a10;
+  --sea: #3f8fc0;
+  --display: "Rye", "Rockwell", Georgia, serif;
+  --text: "IM Fell English", "Iowan Old Style", Georgia, serif;
+  --gutter: clamp(1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--umber); color: var(--parchment); font-family: var(--text); font-size: 1.2rem; line-height: 1.55; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 70rem; margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; line-height: 1.05; }
+p { margin: 0 0 1rem; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+/* The cover's name plate: brass, bevelled, with a rivet at each end. Used for buttons and labels. */
+.plate { position: relative; display: inline-block; padding: .62rem 2.1rem .5rem; font-family: var(--display); font-size: 1rem; letter-spacing: .03em; color: var(--ink); text-decoration: none; background: linear-gradient(#f0d58a, #c9a24a 48%, #a57f2e 52%, #d8b660); border: 1px solid #5c4316; border-radius: .45rem; box-shadow: inset 0 1px 0 rgba(255, 245, 210, .7), inset 0 -2px 0 rgba(70, 45, 10, .45), 0 .25rem .6rem rgba(0, 0, 0, .45); }
+.plate::before, .plate::after { content: ""; position: absolute; top: 50%; width: .55rem; height: .55rem; margin-top: -.275rem; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff2c6, #a07a2c 60%, #4d360f); }
+.plate::before { left: .7rem; } .plate::after { right: .7rem; }
+a.plate:hover, a.plate:focus-visible { background: linear-gradient(#fff0c0, #e2bd62 48%, #c09a44 52%, #f0d58a); }
+.quiet { font-style: italic; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.quiet:hover, .quiet:focus-visible { color: var(--brass); }
+.buy { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; }
+
+.top { position: absolute; z-index: 30; top: 0; left: 0; right: 0; }
+.made { margin: 0; padding: .45rem var(--gutter); background: #170705; color: #cdbf9f; font-size: .98rem; line-height: 1.35; text-align: center; }
+
+/* Thumb-index tabs down the right edge, like a field manual's */
+.tabs { position: fixed; z-index: 40; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: .3rem; }
+.tabs a { writing-mode: vertical-rl; padding: .9rem .38rem; font-family: var(--display); font-size: .82rem; letter-spacing: .04em; text-decoration: none; color: var(--ink); background: linear-gradient(90deg, #d8b660, #b88f3a); border: 1px solid #5c4316; border-right: 0; border-radius: .4rem 0 0 .4rem; box-shadow: -2px 2px 6px rgba(0, 0, 0, .4); }
+.tabs a:hover, .tabs a:focus-visible { background: var(--parchment); }
+
+/* Hero: we start inside the porthole, on the map of Terravenum. Scrolling turns the map like a
+   brass dial and pulls back through the porthole until the whole of Debunked is in view, the
+   airship coming to rest above it. Three planes cut from the cover, transform only. */
+.hero { position: relative; height: 100svh; min-height: 38rem; }
+.js .hero { height: 320svh; }
+.stage { position: sticky; top: 0; height: 100svh; min-height: 38rem; overflow: hidden; background: radial-gradient(ellipse 80% 70% at 60% 50%, #4a140e, var(--umber) 75%); }
+.inside { position: absolute; inset: 6rem var(--gutter) 2.5rem; display: grid; grid-template-columns: minmax(0, 31rem) auto; justify-content: center; align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+.slot { height: min(70svh, 40rem); aspect-ratio: 1650 / 2550; }
+.book { position: absolute; z-index: 2; left: 0; top: 0; transform-origin: 0 0; will-change: transform; box-shadow: 0 1.4rem 2.4rem rgba(10, 2, 0, .55); }
+.book img { position: absolute; max-width: none; }
+.case { left: 0; top: 0; width: 100%; height: 100%; }
+.map { left: 17.879%; top: 46%; width: 63.576%; height: 41.176%; will-change: transform; }
+.ship { left: 54.848%; top: 23.412%; width: 40.606%; height: 26.353%; will-change: transform; }
+.copy { position: relative; z-index: 3; will-change: transform, opacity; }
+.js .copy { opacity: 0; }
+.copy .vol { font-family: var(--display); color: var(--brass); font-size: 1.05rem; letter-spacing: .06em; margin-bottom: .6rem; }
+.copy h1 { font-size: clamp(3rem, 6vw, 5.4rem); color: #e9e4da; -webkit-text-stroke: .04em #3a0d08; paint-order: stroke fill; text-shadow: 0 .06em 0 #3a0d08, 0 .5rem 1.2rem rgba(0, 0, 0, .5); }
+.copy .tag { font-size: clamp(1.35rem, 2.2vw, 1.65rem); line-height: 1.3; margin: 1rem 0 1.6rem; }
+.open { position: absolute; z-index: 4; left: 50%; bottom: 8svh; width: min(36rem, calc(100% - 2 * var(--gutter))); transform: translateX(-50%); text-align: center; will-change: transform, opacity; }
+.open .label { display: block; padding: 1rem 1.8rem .8rem; text-wrap: balance; font-size: clamp(1.25rem, 3vw, 1.85rem); line-height: 1.2; }
+.open .from { margin: .8rem 0 0; font-style: italic; color: var(--ink); text-shadow: 0 0 6px rgba(239, 227, 194, .9), 0 0 2px rgba(239, 227, 194, .9); }
+html:not(.js) .book { display: none; }
+html:not(.js) .slot { background: url(img/debunked.jpg) center / cover; }
+html:not(.js) .open { display: none; }
+.still .hero { height: 100svh; }
+.still .open { display: none; }
+.still .copy { opacity: 1; }
+
+/* Calm sections */
+.band { padding: clamp(4.5rem, 10vw, 8rem) 0; }
+h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin-bottom: 1.2rem; text-wrap: balance; }
+.lead { font-size: clamp(1.35rem, 2.2vw, 1.6rem); line-height: 1.4; max-width: 40rem; }
+
+/* The death letter: parchment, inked */
+.letter { background: var(--leather-2); }
+.paper { max-width: 46rem; margin: 0 auto; padding: clamp(2rem, 5vw, 3.6rem); background: var(--parchment); color: var(--ink); box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .5); transform: rotate(-.6deg); }
+.paper .dear { font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.45; }
+.paper .sig { text-align: right; font-style: italic; }
+.after { max-width: 42rem; margin: 3rem auto 0; }
+.after .buy { margin-top: 1.6rem; }
+
+.volumes { background: var(--umber); }
+.three { list-style: none; margin: 2.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.4rem, 3vw, 2.6rem); }
+.three img { box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, .6); margin-bottom: 1.2rem; }
+.three h3 { font-size: 1.6rem; color: var(--brass); margin-bottom: .4rem; }
+.three .new { display: inline-block; margin-left: .4rem; padding: .1rem .5rem 0; font-family: var(--display); font-size: .78rem; color: var(--ink); background: var(--parchment); border-radius: .2rem; vertical-align: .25rem; }
+.three p { font-size: 1.12rem; }
+
+.mapband { background: var(--parchment); color: var(--ink); }
+.mapband .grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.mapband img.sketch { box-shadow: 0 1rem 2rem rgba(42, 26, 16, .35); }
+.mapband h2 { color: var(--leather); }
+.manual { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.2rem; align-items: start; margin-top: 2.2rem; }
+.manual blockquote { margin: 0 0 .8rem; font-style: italic; }
+.manual cite { display: block; font-style: normal; font-size: .95rem; color: #6b4b2a; }
+
+.about { background: var(--leather-2); }
+.about .grid { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 38rem); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.about img { border-radius: 50%; border: 6px solid var(--brass); box-shadow: 0 0 0 2px #5c4316, 0 1rem 2rem rgba(0, 0, 0, .5); }
+.about .say { font-family: var(--display); font-size: 1.05rem; color: var(--brass); letter-spacing: .03em; }
+
+.ledger { background: var(--umber); }
+.ledger .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+.log { list-style: none; padding: 0; margin: 1.6rem 0 0; border-top: 2px solid var(--brass-2); }
+.log li { display: grid; grid-template-columns: 7.6rem minmax(0, 1fr); gap: 1rem; padding: .8rem 0 .65rem; border-bottom: 1px solid rgba(209, 169, 78, .3); }
+.log .when { font-family: var(--display); color: var(--brass); font-size: .98rem; padding-top: .15rem; }
+.log .past { opacity: .62; }
+.log b { font-weight: 400; display: block; }
+.log span { font-style: italic; color: #cdbf9f; font-size: 1.05rem; }
+.signed { padding: clamp(1.6rem, 4vw, 2.4rem); background: var(--parchment); color: var(--ink); border: 3px double var(--brass-2); }
+.signed h3 { color: var(--leather); font-size: 1.7rem; margin-bottom: .8rem; }
+.signed ul { list-style: none; padding: 0; margin: 1rem 0 1.6rem; }
+.signed li { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; border-bottom: 1px dashed rgba(42, 26, 16, .35); }
+.signed li s { opacity: .55; margin-right: .4rem; }
+
+footer { padding: 2.2rem 0 2.6rem; background: #170705; color: #cdbf9f; font-size: 1.02rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: .8rem 2rem; justify-content: space-between; }
+footer p { margin: 0; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.12rem; }
+  .wrap { padding-right: calc(var(--gutter) + 1.6rem); }
+  .tabs a { padding: .7rem .3rem; font-size: .72rem; }
+  .inside { inset: 5.6rem 2.2rem 1.4rem 1.2rem; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; justify-items: center; align-content: center; gap: 1rem; text-align: center; }
+  .slot { height: min(42svh, 22rem); grid-row: 1; }
+  .copy { grid-row: 2; }
+  .copy h1 { font-size: 2.9rem; }
+  .copy .vol { font-size: .9rem; margin-bottom: .3rem; }
+  .copy .tag { font-size: 1.15rem; margin: .5rem 0 1rem; }
+  .copy .buy { justify-content: center; }
+  .open { bottom: 6svh; }
+  .mapband .grid, .about .grid, .ledger .grid { grid-template-columns: minmax(0, 1fr); }
+  .three { grid-template-columns: minmax(0, 1fr); }
+  .three li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .three img { margin: 0; }
+  .about img { max-width: 10rem; }
+  .log li { grid-template-columns: 6.2rem minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="top">
+  <p class="made">A homepage idea made by Sparsh Saini for Dito Abbott. Not their official site.</p>
+</div>
+
+<nav class="tabs" aria-label="Main">
+  <a href="#volumes">Books</a>
+  <a href="#map">Map</a>
+  <a href="#dito">Dito</a>
+  <a href="#ledger">Events</a>
+</nav>
+
+<main>
+<section class="hero" aria-label="Debunked">
+  <div class="stage">
+    <div class="inside">
+      <div class="copy">
+        <p class="vol">Terravenum Chronicles · Volume One</p>
+        <h1>Debunked</h1>
+        <p class="tag">Grandfather has died six times in two years. That has to be a record.</p>
+        <div class="buy">
+          <a class="plate" href="https://ditoabbott.com/shop/">Signed copy from Dito</a>
+          <a class="quiet" href="https://a.co/d/07hF7gOH">Or on Amazon</a>
+        </div>
+      </div>
+      <div class="slot" aria-hidden="true"></div>
+    </div>
+    <div class="book" role="img" aria-label="The cover of Debunked: red tooled leather and brass, a brass porthole showing the map of Terravenum, an airship, a googly-eyed creature and blue lightning">
+      <img class="map" src="img/d-map.webp" alt="" width="1049" height="1050" fetchpriority="high">
+      <img class="case" src="img/d-case.webp" alt="" width="1650" height="2550" fetchpriority="high">
+      <img class="ship" src="img/d-airship.webp" alt="" width="670" height="672">
+    </div>
+    <div class="open">
+      <span class="plate label">Sometimes adventure knocks. Other times, it kicks the door in.</span>
+    </div>
+  </div>
+</section>
+
+<section class="band letter" id="letter">
+  <div class="wrap">
+    <div class="paper">
+      <p class="dear">“Dearest Alexandria and Ozymandias,</p>
+      <p class="dear">If you are reading this, I have perished. My demise likely involved some manner of spiked pit or curiously fanged beast, so it’s doubtful I suffered long. Do not try to find me. The path is too perilous, and I am lost to the mortal plane.”</p>
+      <p class="sig">Sir Quidby Forsythe III</p>
+    </div>
+    <div class="after">
+      <p class="lead">When Alex and Ozzie read their grandfather’s latest “death” letter, they barely blink. Dying six times in two years has to be a record, even for an explorer as incompetent as Sir Quidby Forsythe III.</p>
+      <p>Faster than you can say “kidnapped by a giant, glowing lizard”, the Forsythe twins are dragged into a world of ancient prophecies, sarcastic swords of legend, mutant slime beasts, and a growing awareness their grandfather might be the greatest explorer in history.</p>
+      <p>With Skhaar the Annihilator hot on their trail, Ozzie and Alex must solve the mystery of Sir Quidby’s disappearance before they become the final victims of the Forsythe Curse.</p>
+      <div class="buy">
+        <a class="plate" href="https://ditoabbott.com/shop/">Signed paperback · US$19.99</a>
+        <a class="quiet" href="https://a.co/d/07hF7gOH">Kindle and paperback on Amazon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band volumes" id="volumes">
+  <div class="wrap">
+    <h2>The Terravenum Chronicles</h2>
+    <p class="lead">Airships, secret temples, and fang-ridden creatures (with extra ooze).</p>
+    <ul class="three">
+      <li><img src="img/debunked.jpg" alt="Debunked, volume one" width="560" height="865" loading="lazy"><div><h3>Debunked</h3><p>Sometimes adventure knocks. Other times, it kicks the door in.</p></div></li>
+      <li><img src="img/thugwallop.jpg" alt="Thugwallop, volume two" width="550" height="824" loading="lazy"><div><h3>Thugwallop</h3><p>Sometimes adventure knocks. Other times, it hurls woodland creatures at your airship. Good thing Grandfather brought his cricket bat.</p></div></li>
+      <li><img src="img/breachfall.jpg" alt="Breachfall, volume three" width="560" height="833" loading="lazy"><div><h3>Breachfall <span class="new">New</span></h3><p>Volume three, out 13 October 2026. The glossary is up on my site, if you don’t mind spoilers.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band mapband" id="map">
+  <div class="wrap grid">
+    <img class="sketch" src="img/map-sketch.jpg" alt="Dito's original pencil sketch of the map of Terravenum, a round world with the Feral, the Abyss and Oblitus Mare" width="1000" height="801" loading="lazy">
+    <div>
+      <h2>Terravenum, in pencil</h2>
+      <p>My original pencil sketch of the world: the Barren and the Divide round the edge, the Feral and the Abyss in the middle, Oblitus Mare to the south.</p>
+      <div class="manual">
+        <img src="img/field-manual.jpg" alt="The Debunking Field Manual (and Bathroom Companion) by Sir Quidby Forsythe III and Dito Abbott" width="420" height="642" loading="lazy">
+        <div>
+          <blockquote>“A feast of balderdash, seasoned with lies.”<cite>Lord Pilligree Merocet, on the Debunking Field Manual</cite></blockquote>
+          <a class="quiet" href="https://ditoabbott.com/debunking-field-manual/">Read the Field Manual</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band about" id="dito">
+  <div class="wrap grid">
+    <img src="img/dito.jpg" alt="Dito Abbott in a wide-brimmed hat" width="400" height="400" loading="lazy">
+    <div>
+      <p class="say">Dito (dee-toe), rhymes with Cheetoh</p>
+      <h2>Born in Puerto Rico, raised in Saudi Arabia, mostly at sea</h2>
+      <p>I sailed around the world with my family by the age of twenty-seven, and wrote Debunked over the course of a voyage from Florida to Mexico, with stops in Panama and the Galápagos.</p>
+      <p>I write novels because the alternative (building a trans-dimensional portal) is highly math-intensive and risks opening doors to timelines where pizza does not exist. I just try to write stories that would have blown my mind when I was twelve. Hence the airships.</p>
+      <p>Sir Terry Pratchett will always have my heart.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band ledger" id="ledger">
+  <div class="wrap grid">
+    <div>
+      <h2>Expedition log</h2>
+      <p class="lead">Come and find the airships at my table.</p>
+      <ul class="log">
+        <li class="past"><span class="when">Sep 26</span><div><b>Tamariki Book Festival</b><span>Arts Centre Great Hall, Christchurch</span></div></li>
+        <li class="past"><span class="when">Sep 27</span><div><b>Ōtautahi Made</b><span>Te Pae, Christchurch</span></div></li>
+        <li class="past"><span class="when">Oct 23 to 26</span><div><b>Armageddon Expo</b><span>Auckland Showgrounds</span></div></li>
+        <li><span class="when">Nov 13 to 15</span><div><b>Fountain Hills Craft Festival</b><span>Arizona</span></div></li>
+        <li><span class="when">Nov 27 to 28</span><div><b>Holiday Market</b><span>Arizona Athletic Grounds, Mesa</span></div></li>
+        <li><span class="when">Dec 3 to 5</span><div><b>Dragonsteel Nexus</b><span>Salt Lake City, Utah</span></div></li>
+      </ul>
+    </div>
+    <div class="signed">
+      <h3>Signed copies by post</h3>
+      <p>Missed me at a con? I’ll sign one and send it.</p>
+      <ul>
+        <li><span>Debunked, paperback</span><span><s>$24.99</s>US$19.99</span></li>
+        <li><span>Thugwallop, paperback</span><span><s>$24.99</s>US$19.99</span></li>
+        <li><span>Volumes 1 and 2 bundle</span><span><s>$49.99</s>US$39.99</span></li>
+      </ul>
+      <a class="plate" href="https://ditoabbott.com/shop/">Order signed copies</a>
+      <p style="margin-top:1.2rem;font-size:1.05rem">In New Zealand or Australia? Email me for print books.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>A mockup made by Sparsh Saini for Dito Abbott. Not affiliated, not live. The covers, map and words are the author’s.</p>
+    <p><a class="quiet" href="#">Back to top</a></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero'), stage = hero.querySelector('.stage');
+  const book = hero.querySelector('.book'), slot = hero.querySelector('.slot');
+  const map = book.querySelector('.map'), ship = book.querySelector('.ship');
+  const open = hero.querySelector('.open'), copy = hero.querySelector('.copy');
+  const P = { x: .497, y: .666, r: .298 };        // the porthole, as fractions of the cover
+  const clamp = v => Math.min(1, Math.max(0, v));
+  const ease = t => t * t * (3 - 2 * t);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let L = null;
+  const measure = () => {
+    book.style.transform = 'none';
+    const s = stage.getBoundingClientRect(), r = slot.getBoundingClientRect();
+    const W = s.width, H = s.height, w = r.width, h = r.height;
+    book.style.width = w + 'px'; book.style.height = h + 'px';
+    // Start: the porthole's glass fills the whole screen, a little beyond the corners.
+    const k0 = Math.hypot(W, H) * 1.06 / (2 * P.r * w);
+    L = { top: hero.getBoundingClientRect().top + scrollY, run: hero.offsetHeight - innerHeight, w, h, k0,
+          S0: [W / 2, H / 2], S1: [r.left - s.left + P.x * w, r.top - s.top + P.y * h] };
+  };
+  const render = p => {
+    const z = ease(clamp((p - .05) / .62));
+    const k = Math.exp(Math.log(L.k0) * (1 - z));
+    const cx = L.S0[0] + (L.S1[0] - L.S0[0]) * z, cy = L.S0[1] + (L.S1[1] - L.S0[1]) * z;
+    book.style.transform = `translate(${(cx - P.x * L.w * k).toFixed(1)}px,${(cy - P.y * L.h * k).toFixed(1)}px) scale(${k.toFixed(4)})`;
+    // The map sits deeper than the glass, so it shrinks back more slowly, and it turns like a dial.
+    const turn = ease(clamp((p - .02) / .66));
+    map.style.transform = `rotate(${(-62 * (1 - turn)).toFixed(2)}deg) scale(${(1 + .32 * (1 - z)).toFixed(4)})`;
+    // The airship is nearer than the cover, drifting in last and settling over the title.
+    const a = ease(clamp((p - .32) / .4));
+    ship.style.transform = `translate(${(9 * (1 - a)).toFixed(2)}%,${(-6 * (1 - a)).toFixed(2)}%) rotate(${(4 * (1 - a)).toFixed(2)}deg)`;
+    const o = ease(clamp((p - .04) / .16));
+    open.style.opacity = (1 - o).toFixed(3); open.style.transform = `translateX(-50%) translateY(${(o * 2).toFixed(2)}rem)`;
+    const c = ease(clamp((p - .7) / .2));
+    copy.style.opacity = c.toFixed(3); copy.style.transform = `translateY(${((1 - c) * 1.4).toFixed(2)}rem)`;
+  };
+  let ticking = false;
+  const update = () => { ticking = false; render(reduced ? 1 : (L.run > 0 ? clamp((scrollY - L.top) / L.run) : 1)); };
+  const relayout = () => { measure(); update(); };
+  if (reduced) document.documentElement.classList.add('still');
+  addEventListener('scroll', () => { if (!ticking && !reduced) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', relayout);
+  document.fonts && document.fonts.ready.then(relayout);
+  relayout();
+})();
+</script>
+</body>
+</html>
